@@ -1,12 +1,20 @@
 package ua.raghoulwave.bergut_api.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 import ua.raghoulwave.bergut_api.constants.Provider;
 import ua.raghoulwave.bergut_api.constants.SportType;
 
 import java.sql.Timestamp;
 import java.util.UUID;
 
+// lombok
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+// JPA
 @Entity
 @Table(name = "activities")
 public class Activity extends EntityBergut {
@@ -22,7 +30,7 @@ public class Activity extends EntityBergut {
             unique = true,
             updatable = false
     )
-    private UUID user_id;
+    private UUID userId;
 
     @Column(
             nullable = false,
@@ -35,7 +43,7 @@ public class Activity extends EntityBergut {
             unique = true,
             updatable = false
     )
-    private UUID provider_activity_id;
+    private UUID providerActivityId;
 
     @Column(
             nullable = false
@@ -107,6 +115,8 @@ public class Activity extends EntityBergut {
             updatable = false
     )
     private Timestamp date;
+
+    private String photoUrl;
 
     @Column(
             nullable = false

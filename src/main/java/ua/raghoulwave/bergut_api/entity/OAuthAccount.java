@@ -1,11 +1,19 @@
 package ua.raghoulwave.bergut_api.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 import ua.raghoulwave.bergut_api.constants.Provider;
 
 import java.sql.Timestamp;
 import java.util.UUID;
 
+// lombok
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+// JPA
 @Entity
 @Table(name = "oauth_accounts")
 public class OAuthAccount extends EntityBergut {
