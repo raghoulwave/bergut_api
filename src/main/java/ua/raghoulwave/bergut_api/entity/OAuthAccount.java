@@ -39,6 +39,7 @@ public class OAuthAccount extends EntityBergut {
 
     @Column(
             nullable = false,
+            unique = true,
             updatable = false
     )
     private UUID providerUserId;
