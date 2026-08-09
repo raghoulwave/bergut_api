@@ -2,10 +2,13 @@ package ua.raghoulwave.bergut_api.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import ua.raghoulwave.bergut_api.constants.Provider;
 import ua.raghoulwave.bergut_api.constants.SportType;
 
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.UUID;
 
 // lombok
@@ -17,7 +20,7 @@ import java.util.UUID;
 // JPA
 @Entity
 @Table(name = "activities")
-public class Activity extends EntityBergut {
+public class Activity {
 
     @Id
     @GeneratedValue(
@@ -127,4 +130,13 @@ public class Activity extends EntityBergut {
             nullable = false
     )
     private String rawJson;
+
+    @CreationTimestamp
+    private Instant createdAt;
+
+    @UpdateTimestamp
+    private Instant updatedAt;
+
+    @Version
+    private long version;
 }

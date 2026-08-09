@@ -1,12 +1,13 @@
-package ua.raghoulwave.bergut_api.strava.controller;
+package ua.raghoulwave.bergut_api.controller.strava;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ua.raghoulwave.bergut_api.strava.dto.StravaTokenResponse;
-import ua.raghoulwave.bergut_api.strava.service.StravaOAuthService;
+import ua.raghoulwave.bergut_api.service.OAuthAccountService;
+import ua.raghoulwave.bergut_api.dto.strava.StravaTokenResponse;
+import ua.raghoulwave.bergut_api.service.strava.StravaOAuthService;
 
 import java.net.URI;
 
@@ -16,12 +17,13 @@ import java.net.URI;
 @RequiredArgsConstructor
 public class StravaOAuthController {
 
-    private final StravaOAuthService oAuthService;
+    private final StravaOAuthService stravaOAuthService;
+    private final OAuthAccountService oAuthAccountService;
 
     @GetMapping("/connect")
     public ResponseEntity<Void> connect() { // perhaps shouldn't be void
 
-        URI uri = oAuthService.authorizationUri();
+        URI uri = stravaOAuthService.authorizationUri();
 
         return ResponseEntity
                 .status(HttpStatus.FOUND)
@@ -33,6 +35,11 @@ public class StravaOAuthController {
     public StravaTokenResponse callback(
             @RequestParam String code
     ) {
-        return oAuthService.exchangeCode(code);
+
+        StravaTokenResponse response = stravaOAuthService.exchangeCode(code);
+
+        oAuthAccountService.getOrCreate(response);
+
+        return response;
     }
 }

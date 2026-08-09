@@ -1,4 +1,4 @@
-package ua.raghoulwave.bergut_api.strava.dto;
+package ua.raghoulwave.bergut_api.dto.strava;
 
 public record StravaTokenResponse (
         String token_type,
@@ -6,5 +6,6 @@ public record StravaTokenResponse (
         String refresh_token,
         Long expires_at,
         Long expires_in,
-        String scope
+        String scope,
+        StravaAthlete athlete
 ) {}

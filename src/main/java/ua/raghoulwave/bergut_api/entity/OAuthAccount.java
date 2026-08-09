@@ -2,9 +2,12 @@ package ua.raghoulwave.bergut_api.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import ua.raghoulwave.bergut_api.constants.Provider;
 
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.UUID;
 
 // lombok
@@ -16,7 +19,7 @@ import java.util.UUID;
 // JPA
 @Entity
 @Table(name = "oauth_accounts")
-public class OAuthAccount extends EntityBergut {
+public class OAuthAccount {
 
     @Id
     @GeneratedValue(
@@ -42,7 +45,7 @@ public class OAuthAccount extends EntityBergut {
             unique = true,
             updatable = false
     )
-    private UUID providerUserId;
+    private Long providerUserId;
 
     @Column(
             nullable = false
@@ -57,10 +60,22 @@ public class OAuthAccount extends EntityBergut {
     @Column(
             nullable = false
     )
-    private Timestamp expiresAt;
+    private Long expiresAt;
+
+    @Column
+    private Long expiresIn;
 
     @Column(
             nullable = false
     )
     private String scope;
+
+    @CreationTimestamp
+    private Instant createdAt;
+
+    @UpdateTimestamp
+    private Instant updatedAt;
+
+    @Version
+    private long version;
 }

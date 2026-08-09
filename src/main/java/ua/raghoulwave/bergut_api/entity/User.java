@@ -2,6 +2,8 @@ package ua.raghoulwave.bergut_api.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -15,7 +17,7 @@ import java.util.UUID;
 // JPA
 @Entity
 @Table(name = "users")
-public class User extends EntityBergut {
+public class User {
 
     @Id
     @GeneratedValue(
@@ -38,7 +40,16 @@ public class User extends EntityBergut {
     @Column(
             nullable = false
     )
-    private String firstName;
+    private String firstname;
 
-    private String lastName;
+    private String lastname;
+
+    @CreationTimestamp
+    private Instant createdAt;
+
+    @UpdateTimestamp
+    private Instant updatedAt;
+
+    @Version
+    private long version;
 }
