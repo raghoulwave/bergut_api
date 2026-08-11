@@ -22,7 +22,7 @@ public class StravaOAuthService {
     private final StravaProperties properties;
     private final RestClient restClient;
 
-    public URI authorizationUri() {
+    public URI getAuthorizationUri() {
 
         int clientId = Integer.parseInt(properties.clientId());
 

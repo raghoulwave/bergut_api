@@ -21,9 +21,9 @@ public class StravaOAuthController {
     private final OAuthAccountService oAuthAccountService;
 
     @GetMapping("/connect")
-    public ResponseEntity<Void> connect() { // perhaps shouldn't be void
+    public ResponseEntity<Void> connect() { // perhaps shouldn't be void??
 
-        URI uri = stravaOAuthService.authorizationUri();
+        URI uri = stravaOAuthService.getAuthorizationUri();
 
         return ResponseEntity
                 .status(HttpStatus.FOUND)
@@ -35,7 +35,6 @@ public class StravaOAuthController {
     public StravaTokenResponse callback(
             @RequestParam String code
     ) {
-
         StravaTokenResponse response = stravaOAuthService.exchangeCode(code);
 
         oAuthAccountService.getOrCreate(response);
