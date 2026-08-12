@@ -1,4 +1,4 @@
-package ua.raghoulwave.bergut_api.property.strava;
+package ua.raghoulwave.bergut_api.strava.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

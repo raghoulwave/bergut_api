@@ -34,6 +34,9 @@ public class OAuthAccount {
     )
     private UUID userId;
 
+    @Enumerated(
+            EnumType.STRING
+    )
     @Column(
             nullable = false,
             updatable = false

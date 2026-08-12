@@ -7,7 +7,7 @@ import ua.raghoulwave.bergut_api.constants.Provider;
 import ua.raghoulwave.bergut_api.entity.OAuthAccount;
 import ua.raghoulwave.bergut_api.mapper.OAuthAccountMapper;
 import ua.raghoulwave.bergut_api.repository.OAuthAccountRepository;
-import ua.raghoulwave.bergut_api.dto.strava.StravaTokenResponse;
+import ua.raghoulwave.bergut_api.strava.dto.StravaTokenResponse;
 
 import java.time.Instant;
 import java.util.List;
@@ -25,7 +25,7 @@ public class OAuthAccountService {
         return repository.findAll();
     }
 
-    public OAuthAccount getOrCreate(StravaTokenResponse dto) {
+    public OAuthAccount getOrCreateOrUpdate(StravaTokenResponse dto) {
 
         return repository.findByProviderUserId(dto.athlete().id())
                 .map(existing -> {

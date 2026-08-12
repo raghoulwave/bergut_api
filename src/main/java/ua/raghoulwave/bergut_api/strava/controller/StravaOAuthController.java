@@ -1,4 +1,4 @@
-package ua.raghoulwave.bergut_api.controller.strava;
+package ua.raghoulwave.bergut_api.strava.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ua.raghoulwave.bergut_api.service.OAuthAccountService;
-import ua.raghoulwave.bergut_api.dto.strava.StravaTokenResponse;
-import ua.raghoulwave.bergut_api.service.strava.StravaOAuthService;
+import ua.raghoulwave.bergut_api.strava.dto.StravaTokenResponse;
+import ua.raghoulwave.bergut_api.strava.service.StravaOAuthService;
 
 import java.net.URI;
 

@@ -1,4 +1,4 @@
-package ua.raghoulwave.bergut_api.dto.strava;
+package ua.raghoulwave.bergut_api.strava.dto;
 
 public record StravaAthlete (
         Long id,

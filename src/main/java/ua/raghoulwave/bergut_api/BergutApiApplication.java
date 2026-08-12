@@ -3,7 +3,7 @@ package ua.raghoulwave.bergut_api;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import ua.raghoulwave.bergut_api.property.strava.StravaProperties;
+import ua.raghoulwave.bergut_api.strava.property.StravaProperties;
 
 @SpringBootApplication
 @EnableConfigurationProperties(StravaProperties.class)

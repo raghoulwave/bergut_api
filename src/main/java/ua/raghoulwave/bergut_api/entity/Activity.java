@@ -35,6 +35,9 @@ public class Activity {
     )
     private UUID userId;
 
+    @Enumerated(
+            EnumType.STRING
+    )
     @Column(
             nullable = false,
             updatable = false
@@ -53,6 +56,9 @@ public class Activity {
     )
     private String name;
 
+    @Enumerated(
+            EnumType.STRING
+    )
     @Column(
             nullable = false,
             updatable = false

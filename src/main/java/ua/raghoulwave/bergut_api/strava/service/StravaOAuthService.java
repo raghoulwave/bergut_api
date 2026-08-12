@@ -1,4 +1,4 @@
-package ua.raghoulwave.bergut_api.service.strava;
+package ua.raghoulwave.bergut_api.strava.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,8 +8,8 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
-import ua.raghoulwave.bergut_api.dto.strava.StravaTokenResponse;
-import ua.raghoulwave.bergut_api.property.strava.StravaProperties;
+import ua.raghoulwave.bergut_api.strava.dto.StravaTokenResponse;
+import ua.raghoulwave.bergut_api.strava.property.StravaProperties;
 
 import java.net.URI;
 import java.util.UUID;

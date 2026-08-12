@@ -2,7 +2,7 @@ package ua.raghoulwave.bergut_api.mapper;
 
 import org.mapstruct.*;
 import ua.raghoulwave.bergut_api.entity.OAuthAccount;
-import ua.raghoulwave.bergut_api.dto.strava.StravaTokenResponse;
+import ua.raghoulwave.bergut_api.strava.dto.StravaTokenResponse;
 
 @Mapper(componentModel = "spring")
 public interface OAuthAccountMapper {
