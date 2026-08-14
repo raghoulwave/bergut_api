@@ -1,7 +1,7 @@
 package ua.raghoulwave.bergut_api.mapper;
 
 import org.mapstruct.*;
-import ua.raghoulwave.bergut_api.dto.UserResponse;
+import ua.raghoulwave.bergut_api.dto.register.RegisterRequest;
 import ua.raghoulwave.bergut_api.entity.User;
 
 @Mapper(
@@ -19,7 +19,7 @@ public interface UserMapper {
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     @Mapping(target = "version", ignore = true)
-    User registerRequestToEntity(UserResponse dto);
+    User registerRequestToEntity(RegisterRequest dto);
 
     // Should it even exist?
     @Mapping(target = "id", ignore = true)
@@ -32,5 +32,5 @@ public interface UserMapper {
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     @Mapping(target = "version", ignore = true)
-    void updateEntityWithRegisterRequest(UserResponse dto, @MappingTarget User entity);
+    void updateEntityWithRegisterRequest(RegisterRequest dto, @MappingTarget User entity);
 }

@@ -1,4 +1,4 @@
-package ua.raghoulwave.bergut_api.dto;
+package ua.raghoulwave.bergut_api.dto.register;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
