@@ -25,9 +25,6 @@ The project is built with **Java** and **Spring Boot** using a clean, modular ar
 * Spring Security
 * Spring Data JPA
 * PostgreSQL
-* Lombok
-* MapStruct
-* Maven
 
 ---
 
